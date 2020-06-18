@@ -9,19 +9,19 @@ function getRandomInteger (minimum, maximum) {
 }
 
 // Povided Arrays
-const nouns = ['dragons', 'toasters']
+const nouns = ['Chair', 'television','book','soup','Frog','musion','paper','phone','sand','taxi']
 
-const verbs = ['walked', 'ran']
+const verbs = ['Forgive', 'listen','love','jog','lose','win','forget','fight','illustrate','freeze']
 
-const adverbs = ['menacingly', 'intentionally']
+const adverbs = ['softly', 'well','quickly','beautiful','greedily','happily','patiently','hard','angrily','slowly']
 
-const adjectives = ['wild', 'slippery']
+const adjectives = ['hot', 'strong','expensive','huge','famous','unhappy','boring','unfair','lucky','curious']
 
 const proNouns = ['they', 'we', 'you', 'he', 'she', 'I', 'it']
 
-const openings = ['Once upon a time', 'I watched']
+const openings = ['I discovered', 'I was reminded','I found myself wondering','I wonder why','so what can we do','Sounds crazy','Please open','Once upon a time','I love icecream','Door opens']
 
-const closings = ['with extra cheese', 'the end']
+const closings = ['with extra cheese', 'the end','tamatos added','put some ice','bottle of water','speaker off','lights turn off','blankets folded','curtains fall off','shows over']
 
 // Instructions:
 
@@ -82,3 +82,24 @@ const closings = ['with extra cheese', 'the end']
 
 // Submission
 // Submit your GitHub repo URL through the LMS.
+function createRandomStatement (){
+  const randomSentence = openings[getRandomInteger(0, openings.length-1)] +  ' ' +
+adjectives[getRandomInteger(0,adjectives.length-1)] + ' ' +
+nouns[getRandomInteger(0,nouns.length-1)] + ' ' +
+proNouns[getRandomInteger(0,proNouns.length-1)] + ' ' +
+verbs[getRandomInteger(0,verbs.length-1)] + ' ' +
+adverbs[getRandomInteger(0,adverbs.length-1)] + ' ' +
+closings[getRandomInteger(0,closings.length-1)] + ' ' ;
+
+return randomSentence;
+}
+function displayStatement(statement){
+  console.log("\n" + statement + "\n");
+}
+for(let i=0;i<10;i++){
+  let randomStatement = createRandomStatement()
+  displayStatement(randomStatement)
+}
+
+
+
